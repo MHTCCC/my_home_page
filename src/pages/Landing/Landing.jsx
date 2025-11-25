@@ -161,9 +161,13 @@ const Landing = () => {
             {/* 主体内容 */}
             <div className="max-w-[1400px] mx-auto px-6 md:px-6 relative" ref={heroContainerRef}>
                 {/* Hero Section - Left Text, Right Avatar */}
-                <div ref={heroTextRef} id="home-section" className="h-[calc(100vh)] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+                <div ref={heroTextRef} id="home-section" className="min-h-screen md:h-[calc(100vh)] flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-12 py-8 md:py-0">
+                    
+                    {/* 移动端适配占位 */}
+                    <div className='h-[87px] md:hidden'></div>
+
                     {/* Left Side - Text Content */}
-                    <div className="flex-1 flex flex-col justify-center space-y-6 md:space-y-8 ">
+                    <div className="flex-1 flex flex-col justify-center space-y-4 md:space-y-8">
                         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.2] tracking-tight overflow-hidden">
                             <div className="hero-text-line mb-4 md:mb-6">
                                 <span className="text-white">Professional</span>{' '}
@@ -188,16 +192,16 @@ const Landing = () => {
                     </div>
 
                     {/* Right Side - Avatar Image */}
-                    <div className="flex-1 flex justify-center md:justify-end items-center ">
-                        <div className="hero-avatar relative w-full max-w-md md:max-w-lg">
-                            <div className="relative overflow-hidden rounded-full">
+                    <div className="flex-shrink-0 md:flex-1 flex justify-center md:justify-end items-center">
+                        <div className="hero-avatar relative w-[80vw] md:w-full max-w-[100vw] md:max-w-lg">
+                            <div className="relative overflow-hidden rounded-full aspect-square">
                                 <img
                                     src={avatarImage}
                                     alt="Hawtin"
-                                    className="w-full h-auto object-cover"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
-                            <div className="absolute -top-4 -left-4 w-full h-full rounded-full border-2 border-white/20 -z-0 scale-110"></div>
+                            <div className="absolute -top-4 -left-4 hidden md:block md:w-full md:h-full rounded-full border-2 border-white/20 -z-0 scale-110"></div>
                         </div>
                     </div>
                 </div>
@@ -205,7 +209,7 @@ const Landing = () => {
                 {/* 个人介绍部分 */}
                 <div ref={aboutSectionRef} id="about-section" className="h-[calc(100vh)] flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
                     {/* Avatar Circle */}
-                    <div className="about-avatar relative shrink-0">
+                    <div className="about-avatar relative shrink-0 hidden md:block">
                         <div className="w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl relative z-10">
                             <img
                                 // src="https://api.dicebear.com/9.x/micah/svg?seed=Ning&backgroundColor=b6e3f4"
