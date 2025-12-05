@@ -8,7 +8,7 @@ const NotFound = () => {
             title="404"
             subTitle="抱歉，您访问的页面不存在"
             extra={
-                <Link to="/">
+                <Link to="/my_home_page/">
                     <Button type="primary">返回首页</Button>
                 </Link>
             }
