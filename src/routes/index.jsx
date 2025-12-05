@@ -21,7 +21,7 @@ import Landing from '../pages/Landing/Landing.jsx';
 
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: '/my_home_page/',
         element: <Layout />,
         children: [
             {
